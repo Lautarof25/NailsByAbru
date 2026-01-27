@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verdini Studio – Nails</title>
+
+  <link rel="icon" type="image/png" href="./images/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tipografía elegante y minimal -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&family=Outfit:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="logo">
+      <img src="images/logo.jpg" alt="Logo Verdini Studio" class="logo-img">
+      <span class="logo-text">Verdini Studio</span>
+    </a>
+    <button class="menu-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="14" y2="16"></line>
+      </svg>
+    </button>
+  </header>
+
+  <section class="hero">
+    <!-- Línea superior original -->
+    <div class="swirl-wrapper swirl-top">
+      <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg">
+        <!-- 70% de 320 es ~224. 30% de 420 es ~126 -->
+        <path class="line-shadow" d="M224 0 C280 50, 150 80, 320 126" />
+        <path class="line-main abstract-path" d="M224 0 C280 50, 150 80, 320 126" />
+      </svg>
+    </div>
+
+    <!-- Nueva línea inferior izquierda -->
+    <div class="swirl-wrapper swirl-accent">
+      <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg">
+        <!-- 20% de 420 es ~84. 80% de 320 es ~256 -->
+        <path class="line-shadow" d="M0 84 C100 150, 50 300, 256 420" />
+        <path class="line-main abstract-path" style="animation-delay: 1.5s;" d="M0 84 C100 150, 50 300, 256 420" />
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <h1>Uñas que reflejan <span>tu esencia única.</span></h1>
+      <p>Manicuría de alta gama con diseños exclusivos y técnicas avanzadas de cuidado para destacar la belleza de tus
+        manos.</p>
+
+      <div class="hero-visual">
+        <div class="main-photo">
+          <img src="images/nails14.webp" alt="Diseño de uñas principal">
+        </div>
+        <div class="side-gallery">
+          <div class="thumb"><img src="images/nails2.jpg" alt="Detalle 1"></div>
+          <div class="thumb"><img src="images/nails3.jpg" alt="Detalle 2"></div>
+          <div class="thumb"><img src="images/nails4.webp" alt="Detalle 3"></div>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <button class="cta-btn">Reservar mi turno</button>
+      </div>
+
+      <div class="mini-info">
+        <span class="mini-info-badge">✨</span>
+        <div>
+          Polygel · Capping · Softgel · Semis<br>
+          Villa Tesei & Home Studio · Hurlingham
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

@@ -883,3 +883,160 @@ footer {
   transform: translateY(-3px);
   box-shadow: 0 15px 30px rgba(255, 77, 148, 0.3);
 }
+
+/* ---------- BEFORE & AFTER SECTION ---------- */
+.before-after-section {
+  padding: 4rem 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.before-after-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--pink-deep);
+  text-align: center;
+}
+
+.comparison-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 4/5;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  cursor: ew-resize;
+  background: var(--pink-soft);
+}
+
+.comparison-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.after-image {
+  z-index: 1;
+}
+
+.before-image {
+  z-index: 2;
+  width: 100%;
+  /* El contenedor ahora ocupa todo el ancho */
+  height: 100%;
+  clip-path: inset(0 50% 0 0);
+  /* Recorta el 50% desde la derecha */
+  overflow: hidden;
+  border-right: 2px solid white;
+  /* El borde ahora se moverá con clip-path si ajustamos la lógica, 
+                                    pero por ahora mantengamos la línea blanca como separador visual */
+}
+
+/* Forzar a que ambas imágenes ocupen el 100% del contenedor padre */
+.comparison-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+
+.label {
+  position: absolute;
+  bottom: 20px;
+  padding: 6px 15px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.before-label {
+  left: 20px;
+}
+
+.after-label {
+  right: 20px;
+}
+
+.comparison-slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: white;
+  z-index: 4;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.slider-handle::after {
+  content: "↔";
+  color: var(--pink-primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#rangeSlider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+  cursor: ew-resize;
+}
+
+.convince-text {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.convince-text a {
+  color: var(--pink-primary);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.convince-text a:hover {
+  border-bottom-color: var(--pink-primary);
+}

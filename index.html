@@ -140,6 +140,34 @@
 
   <div class="section-divider">
     <svg viewBox="0 0 1000 120" xmlns="http://www.w3.org/2000/svg">
+      <path class="line-shadow" d="M0 40 C150 10, 350 110, 500 60 C650 10, 850 110, 1000 40" />
+      <path class="line-main abstract-path" d="M0 40 C150 10, 350 110, 500 60 C650 10, 850 110, 1000 40" />
+    </svg>
+  </div>
+
+  <section class="before-after-section">
+    <h2>Transformaciones Reales</h2>
+    <div class="comparison-container">
+      <div class="after-image">
+        <img src="images/nails7.webp" alt="Después">
+        <span class="label after-label">Después</span>
+      </div>
+      <div class="before-image" id="beforeImgContainer">
+        <img src="images/nails7before.png" alt="Antes">
+        <span class="label before-label">Antes</span>
+      </div>
+      <div class="comparison-slider" id="sliderLine">
+        <div class="slider-handle"></div>
+      </div>
+      <input type="range" min="0" max="100" value="50" id="rangeSlider">
+    </div>
+    <p class="convince-text">¿Ya te convencí? <a
+        href="https://wa.me/541124914485?text=Hola! Vi el antes y después y me encantó. Quiero un turno.">Consultá por
+        un turno</a></p>
+  </section>
+
+  <div class="section-divider">
+    <svg viewBox="0 0 1000 120" xmlns="http://www.w3.org/2000/svg">
       <path class="line-shadow"
         d="M0 60 C100 100, 200 20, 300 80 C400 120, 450 60, 500 40 C550 20, 550 80, 500 80 C450 80, 600 0, 700 60 C800 100, 900 20, 1000 80" />
       <path class="line-main abstract-path"
@@ -307,6 +335,27 @@
 
     // Iniciar
     startAutoPlay();
+
+    // Lógica Antes y Después
+    const rangeSlider = document.getElementById('rangeSlider');
+    const beforeImgContainer = document.getElementById('beforeImgContainer');
+    const sliderLine = document.getElementById('sliderLine');
+
+    if (rangeSlider) {
+      const beforeLabel = document.querySelector('.before-label');
+      const afterLabel = document.querySelector('.after-label');
+
+      rangeSlider.addEventListener('input', (e) => {
+        const value = e.target.value;
+        // Usar clip-path para mostrar/ocultar la imagen anterior de forma responsiva
+        beforeImgContainer.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+        sliderLine.style.left = `${value}%`;
+
+        // Ocultar etiquetas suavemente al acercarse a los bordes
+        if (beforeLabel) beforeLabel.style.opacity = value < 15 ? (value / 15) : 1;
+        if (afterLabel) afterLabel.style.opacity = value > 85 ? ((100 - value) / 15) : 1;
+      });
+    }
   </script>
 
 </body>

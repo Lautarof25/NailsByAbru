@@ -9,6 +9,10 @@
   --text-muted: #8b5e6d;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -138,10 +142,156 @@ header {
   background: var(--pink-soft);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Botón WhatsApp */
+.ws-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--pink-primary);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(255, 77, 148, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ws-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 77, 148, 0.4);
+}
+
+/* Navegación para Escritorio (Oculta en Mobile) */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: block;
+  }
+
+  .desktop-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .desktop-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .desktop-links a:hover {
+    color: var(--pink-primary);
+  }
+
+  .menu-btn {
+    display: none;
+    /* Ocultar hamburguesa en escritorio */
+  }
+}
+
+@media (max-width: 991px) {
+  .ws-text {
+    display: none;
+    /* Ocultar texto en móvil */
+  }
+
+  .ws-btn {
+    padding: 0.75rem;
+    /* Solo círculo para el icono en móvil */
+    aspect-ratio: 1/1;
+  }
+}
+
 @media (max-width: 360px) {
   .logo-text {
     font-size: 1.2rem;
   }
+}
+
+/* ---------- NAVIGATION MENU OVERLAY ---------- */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-menu {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--pink-deep);
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--pink-primary);
+  transform: scale(1.1);
+}
+
+.nav-cta {
+  background: var(--pink-primary);
+  color: white !important;
+  padding: 1rem 2.5rem;
+  border-radius: 99px;
+  font-size: 1.2rem !important;
+  box-shadow: 0 10px 25px rgba(255, 77, 148, 0.3);
+}
+
+.nav-cta:hover {
+  transform: scale(1.05) translateY(-5px) !important;
+  box-shadow: 0 15px 35px rgba(255, 77, 148, 0.4);
 }
 
 /* ---------- HERO SECTION ---------- */

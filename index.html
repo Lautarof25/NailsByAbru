@@ -57,13 +57,11 @@
         manos.</p>
 
       <div class="hero-visual">
-        <div class="main-photo">
-          <img src="images/nails14.webp" alt="Diseño de uñas principal">
+        <div class="main-photo" id="mainPhotoContainer">
+          <img src="images/nails14.webp" alt="Diseño de uñas principal" id="mainPhotoImg">
         </div>
-        <div class="side-gallery">
-          <div class="thumb"><img src="images/nails2.jpg" alt="Detalle 1"></div>
-          <div class="thumb"><img src="images/nails3.jpg" alt="Detalle 2"></div>
-          <div class="thumb"><img src="images/nails4.webp" alt="Detalle 3"></div>
+        <div class="side-gallery" id="thumbnailGallery">
+          <!-- Las miniaturas se cargarán dinámicamente -->
         </div>
       </div>
 
@@ -80,6 +78,72 @@
       </div>
     </div>
   </section>
+
+  <script>
+    const images = [
+      'images/nails1.webp', 'images/nails2.jpg', 'images/nails3.jpg',
+      'images/nails4.webp', 'images/nails5.jpg', 'images/nails6.webp',
+      'images/nails7.webp', 'images/nails8.jpg', 'images/nails9.jpg',
+      'images/nails10.jpg', 'images/nails11.jpg', 'images/nails12.webp',
+      'images/nails13.webp', 'images/nails14.webp', 'images/nails15.webp',
+      'images/nails16.jpg', 'images/nails17.jpg', 'images/nails18.jpg'
+    ];
+
+    const mainPhotoImg = document.getElementById('mainPhotoImg');
+    const gallery = document.getElementById('thumbnailGallery');
+    let currentIndex = images.indexOf('images/nails14.webp');
+    let autoPlayInterval;
+
+    // Generar miniaturas
+    images.forEach((src, index) => {
+      const thumb = document.createElement('div');
+      thumb.className = `thumb ${index === currentIndex ? 'active' : ''}`;
+      thumb.innerHTML = `<img src="${src}" alt="Miniatura ${index + 1}">`;
+      thumb.onclick = () => changeImage(index);
+      gallery.appendChild(thumb);
+    });
+
+    function changeImage(index) {
+      if (index === currentIndex) return;
+
+      // Actualizar índice
+      currentIndex = index;
+
+      // Efecto de fade out
+      mainPhotoImg.style.opacity = '0';
+
+      setTimeout(() => {
+        // Cambiar fuente
+        mainPhotoImg.src = images[currentIndex];
+        // Fade in
+        mainPhotoImg.style.opacity = '1';
+
+        // Actualizar miniaturas activas
+        document.querySelectorAll('.thumb').forEach((t, i) => {
+          t.classList.toggle('active', i === currentIndex);
+        });
+
+        // Hacer scroll suave a la miniatura activa sin mover la página completa
+        const activeThumb = gallery.children[currentIndex];
+        const scrollLeft = activeThumb.offsetLeft - (gallery.offsetWidth / 2) + (activeThumb.offsetWidth / 2);
+        gallery.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      }, 300);
+
+      // Reiniciar autoplay al interactuar
+      startAutoPlay();
+    }
+
+    function startAutoPlay() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % images.length;
+        changeImage(nextIndex);
+      }, 5000); // 5 segundos
+    }
+
+    // Iniciar
+    startAutoPlay();
+  </script>
 
 </body>
 

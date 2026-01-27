@@ -423,14 +423,13 @@ header {
 
   .hero h1,
   .hero p,
-  .cta-container,
-  .mini-info {
+  .cta-container {
     grid-column: 1;
   }
 
   .hero-visual {
     grid-column: 2;
-    grid-row: 1 / 5;
+    grid-row: 1 / 4;
     flex-direction: row-reverse;
     gap: 1.5rem;
     margin-bottom: 0;
@@ -459,4 +458,428 @@ header {
   .hero h1 {
     font-size: 4rem;
   }
+}
+
+/* ---------- SERVICES SECTION ---------- */
+.services-section {
+  padding: 4rem 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeIn 1s ease-out;
+}
+
+.services-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--pink-deep);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.service-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  border-radius: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(124, 29, 63, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(124, 29, 63, 0.1);
+  border-color: var(--pink-primary);
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--pink-primary);
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  background: var(--pink-soft);
+  margin-top: 4rem;
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.footer-info {
+  font-size: 1rem;
+  color: var(--pink-deep);
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--pink-deep);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border-radius: 99px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 77, 148, 0.2);
+  color: var(--pink-primary);
+}
+
+/* ---------- PROMOS SECTION ---------- */
+.promos-section {
+  padding: 4rem 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 40px;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 50px rgba(255, 77, 148, 0.1);
+}
+
+.promos-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--pink-primary);
+}
+
+.promos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.promo-card {
+  display: block;
+  text-decoration: none;
+  background: white;
+  border: 2px dashed var(--pink-primary);
+  padding: 2.5rem 2rem;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-card::before {
+  content: "¡OFERTA!";
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: var(--pink-primary);
+  color: white;
+  padding: 5px 40px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  transform: rotate(45deg);
+}
+
+.promo-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--pink-deep);
+}
+
+.promo-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--pink-primary);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.promo-card:hover {
+  transform: scale(1.05);
+  background: var(--pink-soft);
+  border-style: solid;
+  box-shadow: 0 15px 35px var(--pink-glow);
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 2rem;
+}
+
+/* ---------- SECTION DIVIDER ---------- */
+.section-divider {
+  width: 100%;
+  max-width: 1200px;
+  height: 120px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.section-divider svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-divider .line-main {
+  stroke: var(--pink-primary);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.section-divider .line-shadow {
+  stroke: var(--pink-primary);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  opacity: 0.15;
+  transform: translate(10px, 10px);
+}
+
+/* ---------- COURSES SECTION ---------- */
+.courses-section {
+  padding: 4rem 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeIn 1s ease-out;
+}
+
+.courses-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--pink-deep);
+}
+
+.instructor-badge {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.instructor-name {
+  background: var(--pink-soft);
+  color: var(--pink-primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.course-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .course-container {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.curriculum-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 32px;
+  box-shadow: 0 10px 40px rgba(124, 29, 63, 0.05);
+}
+
+.curriculum-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--pink-deep);
+}
+
+.curriculum-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.curriculum-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  background: var(--pink-soft);
+  padding: 1rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.curriculum-item:hover {
+  transform: translateX(10px);
+  background: white;
+  box-shadow: 0 5px 15px rgba(255, 77, 148, 0.1);
+}
+
+.curriculum-icon {
+  color: var(--pink-primary);
+  font-size: 1.2rem;
+}
+
+.inclusions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.inclusion-tag {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 1.2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.inclusion-icon {
+  font-size: 1.5rem;
+}
+
+.courses-faq {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.faq-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--pink-deep);
+  text-align: center;
+}
+
+.faq-item {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item summary {
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: var(--pink-deep);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: var(--pink-primary);
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-content {
+  padding: 0 2rem 1.5rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.faq-content p {
+  margin-bottom: 1rem;
+}
+
+.faq-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.course-cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.course-cta-btn {
+  display: inline-block;
+  padding: 1.25rem 2.5rem;
+  background: white;
+  color: var(--pink-primary);
+  border: 2px solid var(--pink-primary);
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 77, 148, 0.1);
+}
+
+.course-cta-btn:hover {
+  background: var(--pink-primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 77, 148, 0.3);
 }

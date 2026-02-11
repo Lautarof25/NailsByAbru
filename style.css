@@ -800,6 +800,37 @@ footer {
   box-shadow: 0 15px 35px var(--pink-glow);
 }
 
+.promo-info {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.promo-note {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--pink-soft);
+  color: var(--pink-deep);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  border: 1px solid var(--pink-glow);
+  box-shadow: 0 5px 15px rgba(255, 77, 148, 0.05);
+  animation: fadeIn 1.2s ease-out;
+}
+
+.promo-note svg {
+  color: var(--pink-primary);
+  flex-shrink: 0;
+}
+
+.promo-note strong {
+  color: var(--pink-primary);
+  font-weight: 700;
+}
+
 .copyright {
   font-size: 0.85rem;
   color: var(--text-muted);

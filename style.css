@@ -1309,3 +1309,62 @@ footer {
   min-height: 400px;
   /* Asegurar espacio para que no haya saltos bruscos al cargar */
 }
+
+/* ---------- NEW COMPONENTS ---------- */
+.section-description {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.testimonial-cta {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.review-btn {
+  display: flex;
+  align-items: center;
+  background: white;
+  color: var(--pink-deep);
+  padding: 0.8rem 1.5rem;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 77, 148, 0.15);
+  transition: all 0.3s ease;
+  border: 1px solid var(--pink-soft);
+}
+
+.review-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 77, 148, 0.25);
+  background: var(--pink-soft);
+  color: var(--pink-primary);
+}
+
+.footer-map {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--glass-border);
+}
+
+.footer-map iframe {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .footer-map {
+    border-radius: 0;
+    margin-top: 3rem;
+  }
+}

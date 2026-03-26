@@ -803,22 +803,30 @@ footer {
 .promo-info {
   margin-top: 3rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
   width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .promo-note {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   background: var(--pink-soft);
   color: var(--pink-deep);
-  padding: 1rem 2rem;
+  padding: 1.2rem 2rem;
   border-radius: 20px;
   font-size: 1.1rem;
   border: 1px solid var(--pink-glow);
   box-shadow: 0 5px 15px rgba(255, 77, 148, 0.05);
   animation: fadeIn 1.2s ease-out;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .promo-note svg {
@@ -829,6 +837,96 @@ footer {
 .promo-note strong {
   color: var(--pink-primary);
   font-weight: 700;
+}
+
+.payment-note {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1.5rem;
+}
+
+.payment-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--pink-primary);
+  margin-bottom: 1.2rem;
+  justify-content: center;
+}
+
+.payment-title h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--pink-deep);
+}
+
+.payment-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.payment-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 77, 148, 0.15);
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.payment-list li:hover {
+  transform: translateX(5px);
+  border-color: var(--pink-primary);
+  box-shadow: 0 4px 12px rgba(255, 77, 148, 0.1);
+}
+
+.payment-method {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 1.05rem;
+}
+
+.payment-cost {
+  font-size: 0.9rem;
+  color: var(--pink-deep);
+  background: var(--pink-soft);
+  padding: 0.4rem 0.8rem;
+  border-radius: 99px;
+  font-weight: 600;
+  border: 1px solid var(--pink-glow);
+}
+
+.payment-cost-fee {
+  font-size: 0.9rem;
+  color: white;
+  background: var(--pink-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 99px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255, 77, 148, 0.3);
+}
+
+@media (max-width: 480px) {
+  .promo-note {
+    padding: 1rem 1.2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .payment-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .copyright {
@@ -1333,7 +1431,7 @@ footer {
 
 .carousel-btn.prev {
   left: -20px;
-  z-index: 1;
+  z-index: 100;
 }
 
 .carousel-btn.next {

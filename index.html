@@ -174,7 +174,7 @@
   </div>
 
   <section class="promos-section" id="promos">
-    <h2>Promos Febrero - San Valentín ❤️</h2>
+    <h2>Promos Abril</h2>
     <div class="promos-grid">
       <a href="https://wa.me/541124914485?text=Hola! Quiero la promo de Semi manos + semi pies de $30000"
         target="_blank" class="promo-card">
@@ -216,19 +216,67 @@
     <h2>Transformaciones Reales</h2>
     <p class="section-description">Deslizá el cursor sobre la imagen para ver el cambio asombroso en nuestras clientas.
     </p>
-    <div class="comparison-container">
-      <div class="after-image">
-        <img src="images/nails7.webp" alt="Después">
-        <span class="label after-label">Después</span>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">◄</button>
+      <div class="transformations-carousel" id="transformationsCarousel">
+        <!-- Item 1 -->
+        <div class="case-wrapper">
+          <h3 class="case-title">Caso 1</h3>
+          <div class="comparison-container">
+            <div class="after-image">
+              <img src="images/nailsafter.webp" alt="Después">
+              <span class="label after-label">Después</span>
+            </div>
+            <div class="before-image">
+              <img src="images/nailsbefore.webp" alt="Antes">
+              <span class="label before-label">Antes</span>
+            </div>
+            <div class="comparison-slider">
+              <div class="slider-handle"></div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="range-slider">
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="case-wrapper">
+          <h3 class="case-title">Caso 2</h3>
+          <div class="comparison-container">
+            <div class="after-image">
+              <img src="images/nailsafter.webp" alt="Después">
+              <span class="label after-label">Después</span>
+            </div>
+            <div class="before-image">
+              <img src="images/nailsbefore.webp" alt="Antes">
+              <span class="label before-label">Antes</span>
+            </div>
+            <div class="comparison-slider">
+              <div class="slider-handle"></div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="range-slider">
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="case-wrapper">
+          <h3 class="case-title">Caso 3</h3>
+          <div class="comparison-container">
+            <div class="after-image">
+              <img src="images/nailsafter.webp" alt="Después">
+              <span class="label after-label">Después</span>
+            </div>
+            <div class="before-image">
+              <img src="images/nailsbefore.webp" alt="Antes">
+              <span class="label before-label">Antes</span>
+            </div>
+            <div class="comparison-slider">
+              <div class="slider-handle"></div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="range-slider">
+          </div>
+        </div>
       </div>
-      <div class="before-image" id="beforeImgContainer">
-        <img src="images/nails7before.webp" alt="Antes">
-        <span class="label before-label">Antes</span>
-      </div>
-      <div class="comparison-slider" id="sliderLine">
-        <div class="slider-handle"></div>
-      </div>
-      <input type="range" min="0" max="100" value="50" id="rangeSlider">
+      <button class="carousel-btn next" id="nextBtn" aria-label="Siguiente">►</button>
     </div>
     <p class="convince-text">¿Ya te convencí? <a
         href="https://wa.me/541124914485?text=Hola! Vi el antes y después y me encantó. Quiero un turno.">Consultá por
@@ -446,23 +494,40 @@
     startAutoPlay();
 
     // Lógica Antes y Después
-    const rangeSlider = document.getElementById('rangeSlider');
-    const beforeImgContainer = document.getElementById('beforeImgContainer');
-    const sliderLine = document.getElementById('sliderLine');
+    const comparisonContainers = document.querySelectorAll('.comparison-container');
 
-    if (rangeSlider) {
-      const beforeLabel = document.querySelector('.before-label');
-      const afterLabel = document.querySelector('.after-label');
+    comparisonContainers.forEach(container => {
+      const rangeSlider = container.querySelector('.range-slider');
+      const beforeImgContainer = container.querySelector('.before-image');
+      const sliderLine = container.querySelector('.comparison-slider');
+      const beforeLabel = container.querySelector('.before-label');
+      const afterLabel = container.querySelector('.after-label');
 
-      rangeSlider.addEventListener('input', (e) => {
-        const value = e.target.value;
-        // Usar clip-path para mostrar/ocultar la imagen anterior de forma responsiva
-        beforeImgContainer.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
-        sliderLine.style.left = `${value}%`;
+      if (rangeSlider && beforeImgContainer && sliderLine) {
+        rangeSlider.addEventListener('input', (e) => {
+          const value = e.target.value;
+          // Usar clip-path para mostrar/ocultar la imagen anterior de forma responsiva
+          beforeImgContainer.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+          sliderLine.style.left = `${value}%`;
 
-        // Ocultar etiquetas suavemente al acercarse a los bordes
-        if (beforeLabel) beforeLabel.style.opacity = value < 15 ? (value / 15) : 1;
-        if (afterLabel) afterLabel.style.opacity = value > 85 ? ((100 - value) / 15) : 1;
+          // Ocultar etiquetas suavemente al acercarse a los bordes
+          if (beforeLabel) beforeLabel.style.opacity = value < 15 ? (value / 15) : 1;
+          if (afterLabel) afterLabel.style.opacity = value > 85 ? ((100 - value) / 15) : 1;
+        });
+      }
+    });
+
+    // Lógica del Carrusel de Casos
+    const transformationsCarousel = document.getElementById('transformationsCarousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (transformationsCarousel && prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        transformationsCarousel.scrollBy({ left: -transformationsCarousel.offsetWidth, behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', () => {
+        transformationsCarousel.scrollBy({ left: transformationsCarousel.offsetWidth, behavior: 'smooth' });
       });
     }
     // Lógica del Menú Overlay

@@ -52,6 +52,7 @@
     <nav class="desktop-nav">
       <ul class="desktop-links">
         <li><a href="#hero">Inicio</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#services">Servicios</a></li>
         <li><a href="#promos">Promociones</a></li>
         <li><a href="#transformations">Antes & Después</a></li>
@@ -79,6 +80,7 @@
       <button class="close-menu" id="closeMenu">✕</button>
       <ul class="nav-links">
         <li><a href="#hero">Inicio</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#services">Servicios</a></li>
         <li><a href="#promos">Promociones</a></li>
         <li><a href="#transformations">Antes & Después</a></li>
@@ -109,21 +111,20 @@
 
     <div class="hero-content">
       <h1>Uñas que reflejan <span>tu esencia única.</span></h1>
-      <p>Manicuría de alta gama con diseños exclusivos y técnicas avanzadas de cuidado para destacar la belleza de tus
-        manos.</p>
-
+      
       <div class="hero-visual">
-        <div class="main-photo" id="mainPhotoContainer">
-          <img src="images/nails14.webp" alt="Diseño de uñas principal" id="mainPhotoImg">
-        </div>
-        <div class="side-gallery" id="thumbnailGallery">
-          <!-- Las miniaturas se cargarán dinámicamente -->
+        <div class="hero-image-transparent" id="mainPhotoContainer">
+          <img src="images/nailsHeroFinal.webp" alt="Diseño de uñas principal">
         </div>
       </div>
 
-      <div class="cta-container">
-        <a href="https://wa.me/541124914485?text=Hola! Quiero reservar un turno." target="_blank" class="cta-btn"
-          style="display: block; text-align: center; text-decoration: none;">Reservar mi turno</a>
+      <p>Manicuría de alta gama con diseños exclusivos y técnicas avanzadas de cuidado para destacar la belleza de tus manos.</p>
+
+      <div class="cta-container hero-ctas">
+        <a href="https://wa.me/541124914485?text=Hola! Quiero reservar un turno." target="_blank" class="cta-btn text-center"
+          style="text-decoration: none;">Reservar mi turno</a>
+        <a href="#galeria" class="cta-btn text-center"
+          style="text-decoration: none; background: transparent; color: var(--pink-primary); border: 2px solid var(--pink-primary);">Ver la galería</a>
       </div>
     </div>
   </section>
@@ -135,6 +136,28 @@
         d="M0 60 C100 20, 200 100, 300 40 C400 0, 450 60, 500 80 C550 100, 550 40, 500 40 C450 40, 600 120, 700 60 C800 20, 900 100, 1000 40" />
       <path class="line-main abstract-path"
         d="M0 60 C100 20, 200 100, 300 40 C400 0, 450 60, 500 80 C550 100, 550 40, 500 40 C450 40, 600 120, 700 60 C800 20, 900 100, 1000 40" />
+    </svg>
+  </div>
+
+  <section class="gallery-section" id="galeria">
+    <h2>Galería de Diseños</h2>
+    <p class="section-description">Explorá mis trabajos más recientes y encontrá la inspiración ideal para tus próximas uñas.</p>
+    <div class="gallery-visual">
+      <div class="main-photo">
+        <img src="images/nails14.webp" alt="Diseño de uñas galería" id="mainPhotoImg">
+      </div>
+      <div class="side-gallery" id="thumbnailGallery">
+        <!-- Las miniaturas se cargarán dinámicamente -->
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider">
+    <svg viewBox="0 0 1000 120" xmlns="http://www.w3.org/2000/svg">
+      <path class="line-shadow"
+        d="M1000 60 C900 20, 800 100, 700 40 C600 0, 550 60, 500 80 C450 100, 450 40, 500 40 C550 40, 400 120, 300 60 C200 20, 100 100, 0 40" />
+      <path class="line-main abstract-path"
+        d="M1000 60 C900 20, 800 100, 700 40 C600 0, 550 60, 500 80 C450 100, 450 40, 500 40 C550 40, 400 120, 300 60 C200 20, 100 100, 0 40" />
     </svg>
   </div>
 

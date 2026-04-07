@@ -111,20 +111,22 @@
 
     <div class="hero-content">
       <h1>Uñas que reflejan <span>tu esencia única.</span></h1>
-      
+
       <div class="hero-visual">
         <div class="hero-image-transparent" id="mainPhotoContainer">
           <img src="images/nailsHeroFinal.webp" alt="Diseño de uñas principal">
         </div>
       </div>
 
-      <p>Manicuría de alta gama con diseños exclusivos y técnicas avanzadas de cuidado para destacar la belleza de tus manos.</p>
+      <p>Manicuría de alta gama con diseños exclusivos y técnicas avanzadas de cuidado para destacar la belleza de tus
+        manos.</p>
 
       <div class="cta-container hero-ctas">
-        <a href="https://wa.me/541124914485?text=Hola! Quiero reservar un turno." target="_blank" class="cta-btn text-center"
-          style="text-decoration: none;">Reservar mi turno</a>
+        <a href="https://wa.me/541124914485?text=Hola! Quiero reservar un turno." target="_blank"
+          class="cta-btn text-center" style="text-decoration: none;">Reservar mi turno</a>
         <a href="#galeria" class="cta-btn text-center"
-          style="text-decoration: none; background: transparent; color: var(--pink-primary); border: 2px solid var(--pink-primary);">Ver la galería</a>
+          style="text-decoration: none; background: transparent; color: var(--pink-primary); border: 2px solid var(--pink-primary);">Ver
+          la galería</a>
       </div>
     </div>
   </section>
@@ -141,10 +143,11 @@
 
   <section class="gallery-section" id="galeria">
     <h2>Galería de Diseños</h2>
-    <p class="section-description">Explorá mis trabajos más recientes y encontrá la inspiración ideal para tus próximas uñas.</p>
+    <p class="section-description">Explorá mis trabajos más recientes y encontrá la inspiración ideal para tus próximas
+      uñas.</p>
     <div class="gallery-visual">
       <div class="main-photo">
-        <img src="images/nails14.webp" alt="Diseño de uñas galería" id="mainPhotoImg">
+        <img loading="lazy" src="images/nails14.webp" alt="Diseño de uñas galería" id="mainPhotoImg">
       </div>
       <div class="side-gallery" id="thumbnailGallery">
         <!-- Las miniaturas se cargarán dinámicamente -->
@@ -287,11 +290,11 @@
           <h3 class="case-title">Softgel Via Lactea</h3>
           <div class="comparison-container">
             <div class="after-image">
-              <img src="images/nailsafter.webp" alt="Después">
+              <img loading="lazy" src="images/nailsafter.webp" alt="Después">
               <span class="label after-label">Después</span>
             </div>
             <div class="before-image">
-              <img src="images/nailsbefore.webp" alt="Antes">
+              <img loading="lazy" src="images/nailsbefore.webp" alt="Antes">
               <span class="label before-label">Antes</span>
             </div>
             <div class="comparison-slider">
@@ -306,11 +309,11 @@
           <h3 class="case-title">Softgel Via Lactea</h3>
           <div class="comparison-container">
             <div class="after-image">
-              <img src="images/nailsafter.webp" alt="Después">
+              <img loading="lazy" src="images/nailsafter.webp" alt="Después">
               <span class="label after-label">Después</span>
             </div>
             <div class="before-image">
-              <img src="images/nailsbefore.webp" alt="Antes">
+              <img loading="lazy" src="images/nailsbefore.webp" alt="Antes">
               <span class="label before-label">Antes</span>
             </div>
             <div class="comparison-slider">
@@ -325,11 +328,11 @@
           <h3 class="case-title">Softgel Via Lactea</h3>
           <div class="comparison-container">
             <div class="after-image">
-              <img src="images/nailsafter.webp" alt="Después">
+              <img loading="lazy" src="images/nailsafter.webp" alt="Después">
               <span class="label after-label">Después</span>
             </div>
             <div class="before-image">
-              <img src="images/nailsbefore.webp" alt="Antes">
+              <img loading="lazy" src="images/nailsbefore.webp" alt="Antes">
               <span class="label before-label">Antes</span>
             </div>
             <div class="comparison-slider">
@@ -459,7 +462,7 @@
   <footer>
     <div class="footer-content">
       <div class="logo">
-        <img src="images/logo.jpg" alt="Logo Verdini Estudio" class="logo-img">
+        <img loading="lazy" src="images/logo.jpg" alt="Logo Verdini Estudio" class="logo-img">
         <span class="logo-text">Verdini Estudio</span>
       </div>
       <div class="footer-info">
@@ -510,7 +513,7 @@
     images.forEach((src, index) => {
       const thumb = document.createElement('div');
       thumb.className = `thumb ${index === currentIndex ? 'active' : ''}`;
-      thumb.innerHTML = `<img src="${src}" alt="Miniatura ${index + 1}">`;
+      thumb.innerHTML = `<img loading="lazy" src="${src}" alt="Miniatura ${index + 1}">`;
       thumb.onclick = () => changeImage(index);
       gallery.appendChild(thumb);
     });
